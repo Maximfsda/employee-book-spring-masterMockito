@@ -63,8 +63,12 @@ public class EmployeeService {
                 .collect(Collectors.toList());
     }
 
-    private Double getAverageSalary(){
+    public Double getAverageSalary(){
         return employees.values().stream().
                 collect(Collectors.averagingInt(Employee::getSalary));
     }
+    public Employee removeEmployee(int id){
+        return employees.remove(id);
+    }
+
 }
